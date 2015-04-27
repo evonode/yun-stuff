@@ -1,0 +1,18 @@
+<html>
+<head>
+  <title></title>
+  <script type="text/javascript" src="skateboard.min.js"></script>
+</head>
+<body>
+
+  <script type="text/javascript">
+    skateboard(function(stream) {
+      stream.on('data', function(d) {
+      	var event = JSON.parse(d.toString())
+        console.log('state:', event.state, 'count:', event.count);
+      });
+    });
+  </script>
+
+</body>
+</html>
